@@ -1,10 +1,10 @@
 datecapture
 -----------
 
-Parses dates in natural language, especially  for korean. Basically, it's a wrapper of [chrono-node](https://npmjs.com/package/chrono-node)
-except for Korean— which is hard to parse due to it's grammatical structure.
+Parses dates in natural language, especially  for Korean. Basically, it's a wrapper of [chrono-node](https://npmjs.com/package/chrono-node)
+along with Korean support— which is hard to parse due to its grammatical structure.
 
-Optimized for calendar apps, as it extracts a date interval and a subject of the event from the text.
+It is optimized for calendar apps, as it extracts a date interval and an event subject from the text.
 
 ## Installation
 
@@ -16,7 +16,7 @@ npm i datecapture
 
 ### [`parseDate`](./src/parseDate.ts)
 
-This function takes a natural language date text in `string`, a base date in `Date` and a timezone in `string` as arguments and returns an object with the following properties:
+This function takes a natural language date text in `string`, a base date in `Date`, and a timezone in `string` as arguments and returns an object with the following properties:
 
 ```typescript
 export interface ParsedDates {
@@ -41,7 +41,7 @@ export interface ParsedDates {
 }
 ```
 
-> Note that it returns `startDate`, `endDate`, and `unit` instead of single `Date` object. Since this module is originally designed for calendar apps, it's more convenient to have a start and end date for an event. If you want to use a single instance, just take `startDate`.
+> Note that it returns `startDate`, `endDate`, and `unit` instead of a single `Date` object. Since this module was originally designed for calendar apps, having a start and end date for an event is more convenient. If you want to use a single instance, take `startDate`.
 
 If date is not found, it returns `undefined`.
 
