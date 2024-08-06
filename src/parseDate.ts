@@ -13,7 +13,7 @@ export interface ParsedDates {
 
   subject: string;
   dateText: string;
-  offset: number;
+  dateOffset: number;
 }
 
 export function parseDate(text: string, baseDate?: Date, timezone = 'Asia/Seoul'): ParsedDates | undefined {
@@ -49,7 +49,7 @@ function parseIntlDate(text: string, baseDate: Date): ParsedDates | undefined {
     subject: text.replace(parseResult[0].text, '').trim(),
     unit: findUnit(startDate),
     dateText: parseResult[0].text,
-    offset: parseResult[0].index,
+    dateOffset: parseResult[0].index,
   };
 }
 
@@ -68,7 +68,7 @@ function parseKoreanDate(text: string, baseDate: Date, timezone?: string): Parse
     subject: parsed.subject,
     unit: parsed.unit,
     dateText: Word.join(text, parsed.dateText),
-    offset: parsed.dateText[0]?.startIndex ?? 0,
+    dateOffset: parsed.dateText[0]?.startIndex ?? 0,
   };
 }
 
