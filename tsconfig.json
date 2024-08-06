@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "target": "ES6",
+    "lib": ["dom", "es2021", "es2018.promise"],
     "strict": true,
+    "module": "preserve",
+    "moduleResolution": "Node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strictPropertyInitialization": false,
-    "declaration": true
+    "allowJs": true,
+    "outDir": "dist"
   },
-  "compileOnSave": true
+  "include": ["src"]
 }
